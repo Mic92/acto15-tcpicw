@@ -1,1 +1,5 @@
 .vagrant
+www
+nginx.conf
+/*.csv
+*.png
