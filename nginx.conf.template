@@ -1,0 +1,11 @@
+pid nginx.pid;
+user root;
+error_log stderr;
+events { worker_connections  1024; }
+http {
+    server {
+        listen 80;
+        autoindex on;
+        location / { root $web_root; }
+    }
+}
