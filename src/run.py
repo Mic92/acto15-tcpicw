@@ -270,6 +270,9 @@ if __name__ == '__main__':
     setLogLevel('info')
     measurements = {}
 
+    # mininet seriously fuck ups cgroups
+    os.system("mount --make-rprivate /")
+
     os.environ['LC_ALL'] = 'C'  # consistent number formats
     data = Data("data.csv")
     data.load_or_create()
