@@ -22,7 +22,9 @@ then be presented with a graph.
 The following test parameter were used:
 
 - initial window size (on both links): 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40
-- uplink delay in ms: 1, 5, 10, 50, 100, 300
+- uplink forwarding delay in ms: 1, 5, 10, 50, 100, 300
+- client-router forwarding delay in ms: 1
 - uplink bandwith in mbit/s: 1, 2, 5, 10, 100
+- client-router bandwith in mbit/s: 1000
 - requests size in kb (only payload, not http): 1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096,
   8192, 16384
