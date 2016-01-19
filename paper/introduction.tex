@@ -1,0 +1,23 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The Transmission Control Protcol, short TCP, is most popular communication
+protcol on the Internet. To make it scaleable and adaptive to the current
+condition of network without overloading it, congestion control mechanism are
+used. Part of these algorithm is TCP slow start as decribed in
+RFC5681~\cite{rfc5681}.
+
+The TCP slow algoritm limits the number of bytes it sends on a new tcp
+connection before waiting for an acknowledgement. On every acknowleged packet
+the sender increases the window size by one segment until the Slow-start
+threshold (\emph{ssthres}) is reached  or the receiver advertises a lower
+receiver window (\emph{rwnd}) in its tcp header. The exponential grow of the
+window every roundtrip will be also stopped if TCP detects packet loss. This
+could be indicated by either a duplicate acknowlegdment of the receiver or a
+timeout. Depending on the congestion algorithm in use the sender will then
+behave differently.
+
+
+. The initial
+congestion window therefor defines the upper limit of bytes a sender assumes at
+the beginning.

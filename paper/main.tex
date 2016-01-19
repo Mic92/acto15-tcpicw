@@ -1,0 +1,63 @@
+\documentclass[10pt]{IEEEtran}
+\usepackage{epsfig,endnotes,url,color}
+\usepackage{array}
+\usepackage[english]{babel}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage[ruled, vlined]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+ % Add navigation window to pdf
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
+\usepackage{xr}
+
+%special fonts
+\usepackage{mathpazo} % math & rm
+\linespread{1.03}        % Palatino needs more leading (space between lines)
+
+\input{space-tricks}
+
+
+\input{mac}
+\input{defs}
+
+\newcommand{\myfontsize}{\fontsize{7}{9}\selectfont}
+
+\newcommand{\myreffontsize}{\fontsize{8.5}{9.5}\selectfont}
+
+\begin{document}
+
+\author{
+\IEEEauthorblockN{J{\"o}rg Thalheim}\\
+\IEEEauthorblockA{TU Dresden}\\
+}
+
+\title{\huge The Impact of TCP's Initial Congestion Window}
+\maketitle
+\input{abstract}
+
+\input{introduction}
+\input{methodology}
+
+\input{evaluation}
+\input{discussions}
+
+
+\input{related}
+
+\input{conclusion}
+%\vspace{-3mm}
+\footnotesize
+\bibliographystyle{abbrv}
+
+\bibliography{main}
+%\appendix
+
+
+\end{document}

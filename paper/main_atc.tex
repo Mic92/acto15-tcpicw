@@ -1,0 +1,118 @@
+
+%-----------------------------------------------------------------------------
+%
+%               Template for LaTeX Class/Style File
+%
+% Name:         sigplanconf-template.tex
+% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
+%               file for SIGPLAN conference proceedings.
+%
+% Author:       Paul C. Anagnostopoulos
+%               Windfall Software
+%               978 371-2316
+%               paul@windfall.com
+%
+% Created:      15 February 2005
+%
+%-----------------------------------------------------------------------------
+%\documentclass{sig-alternate-10pt}
+\documentclass[letterpaper,twocolumn,10pt]{article}
+
+
+
+\usepackage{usenix,epsfig,endnotes,url,color,subfigure}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage[compact]{titlesec}
+\usepackage{wrapfig}
+
+
+
+\usepackage[english]{babel} 
+
+\usepackage{amsmath}
+ \usepackage[ruled]{algorithm2e}
+ 
+ 
+ % Add navigation window to pdf
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
+
+
+\input{mac}
+\input{defs}
+\newcommand{\myfontsize}{\fontsize{8}{9}\selectfont}
+
+
+
+\newcommand{\projecttitle}{{\tt Inspector}\xspace}
+\newcommand{\pthreads}{{\tt pthreads}\xspace}
+\newcommand{\dthreads}{{\tt Dthreads}\xspace}
+\newcommand{\intelpt}{{Intel\textsuperscript{\textregistered} PT}\xspace}
+
+%\newcommand{\todo}[1]{{\frameit{ToDo}{#1}}}
+\newcommand{\obs}[1]{{\frameit{Obs}{#1}}}
+% \usepackage{amsthm}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\pagenumbering{arabic}
+
+
+\usepackage{mathpazo} % math & rm
+\linespread{1.03}        % Palatino needs more leading (space between lines)
+%\usepackage{inconsolata}
+%\usepackage{zi4}
+%\renewcommand{\ttdefault}{txtt}
+\normalfont
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\title{Inspector: A Data Provenance Library for Multithreaded Programs}
+
+%\author{
+%\parbox{1.5in}{
+%\centerline{J\"{o}rg Thalheim}
+%\centerline{TU Dresden}
+%}
+%\and
+%\parbox{1.5in}{
+%\centerline{Pramod Bhatotia}
+%\centerline{TU Dresden}
+%}
+%\and
+%\parbox{1.5in}{
+%\centerline{Christof Fetzer}
+%\centerline{TU Dresden}
+%}
+%}
+
+
+\maketitle
+\thispagestyle{empty}
+%\pagestyle{empty}
+\input{abstract}
+
+
+\input{introduction}
+%\input{overview}
+\input{model}
+\input{algorithms}
+
+\input{implementation}
+\input{evaluation}
+\input{related}
+\input{conclusion}
+
+\bibliographystyle{abbrv}
+
+\bibliography{main} 
+
+
+
+\end{document}

@@ -1,0 +1,17 @@
+\begin{abstract}
+The initial congestion window is an important parameter of the TCP slow start
+algorithm. It defines the upper limit of outstanding bytes a sender assumes at
+the beginning of new connection.
+
+The current standard RFC3390~\cite{rfc3390} from 2002 specifies a window of four
+segments (over 4KB). Large-scale experiments~\cite{36640} by Google from 2010 have
+shown that an increase to 10 segments improves the overall performance of web
+servers without a negative impact on the network stability. Driven by these
+results, the experimental standard RFC6928~\cite{rfc6928}
+proposed an increase of the TCP's Initial Window.
+
+In this paper the effect of different TCP's Initial Window on user latency is
+evaluated in a controlled environment simulating various network condition with
+the use of Mininet~\cite{mininet}.
+\vspace{-4mm}
+\end{abstract}
