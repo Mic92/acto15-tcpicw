@@ -135,6 +135,12 @@ before an acknowledgement has to reach back the sender. Their reasoning for the
 improvement was that 90\% of all requests of the top 500 webpages actually fit
 within the first 10 segments.
 
+Also short bursty HTTP Requests have to compete with longer flows such as
+video streams or downloads. This effect is also known as "elephant
+flow"~\cite{992898}. Because continous tcp connection will have the maximum
+possible congestion window, they will get a disproportionate share of the total
+bandwidth in contrast the shorter connection.
+
 As result of these experiments IETF released in 2010 an Internet
 Draft~\cite{draft-ietf-tcpm-initcwnd-00} to increase the initial window by the
 same amount, which became an experimental standard in 2013
