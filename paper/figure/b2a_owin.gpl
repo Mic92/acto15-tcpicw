@@ -1,0 +1,25 @@
+set linetype  1 lc rgb "dark-violet" lw 1
+set linetype  2 lc rgb "#009e73" lw 1
+set linetype  3 lc rgb "#56b4e9" lw 1
+set linetype  4 lc rgb "#e69f00" lw 1
+set linetype  5 lc rgb "#f0e442" lw 1
+set linetype  6 lc rgb "#0072b2" lw 1
+set linetype  7 lc rgb "#e51e10" lw 1
+set linetype  8 lc rgb "black"   lw 1
+set linetype  9 lc rgb "gray50"  lw 1
+set linetype cycle 10
+
+set xlabel "time [s]"
+set ylabel "Outstanding Data [Megabyte]"
+set format x "%.2S"
+set format y "%.0f"
+set xrange [0:15];
+set xdata time
+set terminal pdf
+set output "b2a_owin.pdf"
+plot "b2a_owin_cubic.datasets"      index 0 using ($1-1453304449.397253):($2/1e6) title "cubic" with lines, \
+     "b2a_owin_highspeed.datasets"  index 0 using ($1-1453304860.468956):($2/1e6) title "HighSpeed TCP" with lines, \
+     "b2a_owin_htcp.datasets"       index 0 using ($1-1453304476.473899):($2/1e6) title "H-TCP" with lines, \
+     "b2a_owin_hybla.datasets"      index 0 using ($1-1453304724.035974):($2/1e6) title "Hybla" with lines, \
+     "b2a_owin_reno.datasets"       index 0 using ($1-1453388816.274360):($2/1e6) title "Reno" with lines, \
+     "b2a_owin_vegas.datasets"      index 0 using ($1-1453304549.215924):($2/1e6) title "Vegas" with lines;
