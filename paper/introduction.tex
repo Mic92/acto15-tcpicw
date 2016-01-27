@@ -83,7 +83,7 @@ transfer using TCP slow start assuming no packets get lost is calculated the
 follow way~\cite{832574}:
 
 \begin{align}
-  t&=\lceil log_{\gamma} (\frac{S(\gamma - 1)}{init\_cwnd} + 1) \rceil * RTT + \frac{S}{C} \nonumber \\
+  t&=\lceil log_{\gamma} (\frac{S(\gamma - 1)}{init\_cwnd} + 1) \rceil * RTT + \frac{S}{C} \label{loadtime}\\
   S~&\dots~\text{transfer size } \nonumber \\
   init\_cwnd~&\dots~\text{Initial window size} \nonumber \\
   RTT~&\dots~\text{Round-Trip-Time} \nonumber \\
@@ -99,17 +99,43 @@ follow way~\cite{832574}:
    \end{array}\right.} && \nonumber\text{not delayed} \\
 \end{align}
 
-A report by google called \emph{More Bandwidth Doesn’t Matter}\cite{bandwith}
+A report by google called \emph{More Bandwidth Doesn't Matter}\cite{bandwith}
 indicates that browsers cannot make effective use of broadband connections to
-speed up page load time. The study shown that an increase of bandwith from
+speed up page load time. The study shown that an increase of bandwidth from
 5Mbps to 10Mbps only gave 5\% improvement in load time. On the other hand
 changing the Round Trip time had much higher impact: With a high RTT (220ms)
 only 10\% of 5Mbps connection could be used, while an almost zero Round trip
-time (still only) allowed to use 54\% of the bandwith.
+time (still only) allowed to use 54\% of the bandwidth.
 
 To reduce the time most browsers issue 6 to 13 parallel requests per
-domain~\cite{browserscope}. Websitemaster can increase these parallelism
-further by using multiple domains for ressources. While this approach improves
+domain~\cite{browserscope}. Website master can increase these parallelism
+further by using multiple domains for resources. While this approach improves
 load time it pretty inefficient, because every TCP connection has to build its
 own congestion window. Also these connection compete with each other for
-bandwith and circumvent TCP congestion avoidance.
+bandwidth and circumvent TCP congestion avoidance.
+
+A better alternative to multiple connection to improve the load time might be to
+increase the initial congestion window as we see in equation \ref{loadtime}. The
+current standard rfc3390 from 2002 proposes a windows size of 2 to 4 segments.
+In praxis often a window of 3 was chosen, which correspond to the size of an
+Ethernet Frame (4kb). However since then the bandwidth has been dramatically
+increased: According to Akami's report \emph{State of the
+internet}~\cite{q3-2015-soti-connectivity-final} the global average bandwidth is
+now 5.1Mbps.
+
+So there is an growing demands for an adaption of the initial window size. In
+2009 Google published the result of an internal large scale
+experiement~\cite{36640}. From measurements over 2 weeks they experienced on
+average an latency improvement of 10\%, when using a window of 10 segments. On
+the hand the retransmission rate due more lost package only rise up 0.5\%. On
+networks with a high bandwidth delay product (where either the RTT, the
+bandwidth or both is high) and on networks with higher RTT, the acceleration was
+even higher. This is to be expected because more packets can be transmitted
+before an acknowlegdement has to reach back the sender. Their reasoning for the
+improvement was that 90\% of all requests of the top 500 webpages actually fit
+within the first 10 segments.
+
+As result of these experiements IETF released in 2010 an Internet
+Draft~\cite{draft-ietf-tcpm-initcwnd-00} to increase the initial window by the
+same amount, which became an experimental standard in 2013
+(rfc6928~\cite{rfc6928})
