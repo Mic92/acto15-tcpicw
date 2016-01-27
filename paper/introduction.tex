@@ -106,3 +106,10 @@ speed up page load time. The study shown that an increase of bandwith from
 changing the Round Trip time had much higher impact: With a high RTT (220ms)
 only 10\% of 5Mbps connection could be used, while an almost zero Round trip
 time (still only) allowed to use 54\% of the bandwith.
+
+To reduce the time most browsers issue 6 to 13 parallel requests per
+domain~\cite{browserscope}. Websitemaster can increase these parallelism
+further by using multiple domains for ressources. While this approach improves
+load time it pretty inefficient, because every TCP connection has to build its
+own congestion window. Also these connection compete with each other for
+bandwith and circumvent TCP congestion avoidance.
