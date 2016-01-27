@@ -138,4 +138,8 @@ within the first 10 segments.
 As result of these experiements IETF released in 2010 an Internet
 Draft~\cite{draft-ietf-tcpm-initcwnd-00} to increase the initial window by the
 same amount, which became an experimental standard in 2013
-(rfc6928~\cite{rfc6928})
+(rfc6928~\cite{rfc6928}). The linux operating system also early on adapt to this
+scheme in 2011~\cite{linux}. Almost all Content Delivery Networks thesedays
+have at least an initial window of 10 as baseline set~\cite{cdnplanet}. Some of
+them go even further and have a higher window such as Cachefly, which sends a
+burst of 70 packets.
