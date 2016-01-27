@@ -125,21 +125,21 @@ now 5.1Mbps.
 
 So there is an growing demands for an adaption of the initial window size. In
 2009 Google published the result of an internal large scale
-experiement~\cite{36640}. From measurements over 2 weeks they experienced on
+experiment~\cite{36640}. From measurements over 2 weeks they experienced on
 average an latency improvement of 10\%, when using a window of 10 segments. On
 the hand the retransmission rate due more lost package only rise up 0.5\%. On
 networks with a high bandwidth delay product (where either the RTT, the
 bandwidth or both is high) and on networks with higher RTT, the acceleration was
 even higher. This is to be expected because more packets can be transmitted
-before an acknowlegdement has to reach back the sender. Their reasoning for the
+before an acknowledgement has to reach back the sender. Their reasoning for the
 improvement was that 90\% of all requests of the top 500 webpages actually fit
 within the first 10 segments.
 
-As result of these experiements IETF released in 2010 an Internet
+As result of these experiments IETF released in 2010 an Internet
 Draft~\cite{draft-ietf-tcpm-initcwnd-00} to increase the initial window by the
 same amount, which became an experimental standard in 2013
-(rfc6928~\cite{rfc6928}). The linux operating system also early on adapt to this
-scheme in 2011~\cite{linux}. Almost all Content Delivery Networks thesedays
+(rfc6928~\cite{rfc6928}). The Linux operating system also early on adapt to this
+scheme in 2011~\cite{linux}. Almost all Content Delivery Networks these days
 have at least an initial window of 10 as baseline set~\cite{cdnplanet}. Some of
 them go even further and have a higher window such as Cachefly, which sends a
 burst of 70 packets.
