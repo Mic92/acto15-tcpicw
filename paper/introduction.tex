@@ -34,27 +34,75 @@ transmission. Routers in the network have a limited queue they fill up, before
 they begin to drop IP packets. Bottlenecks in the network occur because
 connected links have asymmetric bandwidth or usage.
 
-The task of a TCP congestion algorithms is to manage this network resources by
-scaling the window of outstanding bytes accordingly. This has a direct effect on
-throughput and delay of a connection. The actual bandwidth of TCP connection is
-calculated in the following way~\cite{opac-b1120676}:
-
-\begin{align}
-  Throughput &= \frac{cwnd * MTU}{RTT} \\
-  MTU~&\dots~\text{Maximum Transfer Unit [bytes]} \\
-  cwnd~&\dots~\text{Outstanding segments} \\
-  RTT~&\dots~\text{Round trip time between sender and receiver [s]} \\
-  Throughput~&\dots~\text{bandwidth of the sender [bytes/s]}
-\end{align}
-
 \begin{figure*}[ht]
 \footnotesize
 \includegraphics[scale=1]{figure/b2a_owin.pdf}
 \caption{Congestion window grow over time for different TCP congestion
 algorithm for a single connection over 10mbit link with a forwarding delay of
-10ms}
+10ms when downloading 16MiB file over HTTP}
 \label{fig:cwnd_tcp_algos}
 \end{figure*}
 
-The initial congestion window therefor defines the upper limit of bytes a sender assumes at
-the beginning.
+The task of a TCP congestion algorithms is to manage this network resources by
+scaling the window of outstanding bytes accordingly. This has a direct effect on
+throughput. The actual bandwidth of TCP connection is calculated in the
+following way~\cite{opac-b1120676}:
+
+\begin{align}
+  Throughput &= \frac{cwnd * MTU}{RTT} \\
+  MTU~&\dots~\text{Maximum Transfer Unit [bytes]} \nonumber\\
+  cwnd~&\dots~\text{Outstanding segments} \nonumber\\
+  RTT~&\dots~\text{Round trip time between} \nonumber\\
+      &~~~~\text{sender and receiver [s]} \nonumber\\
+  Throughput~&\dots~\text{bandwidth of the sender [bytes/s]} \nonumber
+\end{align}
+
+The initial congestion window therefor is a critical factor at the start of a
+new connection. If it is chosen too high their is a risk of overloading the
+network which results in dropped packets followed by retransmission. If it is
+too low a connection will take longer to fully use the available bandwidth on the
+link. This is especially important if only small payloads are transmitted. For
+these connections it might happen that the data is transferred before the full
+congestion window could be build up.
+
+One of the most important applications of the TCP these days is the web. A
+common web page consists of multiple resources like HTML-Code, CSS style-sheets
+and pictures. To load such a page a browser has to issue multiple HTTP-Requests.
+According to httparchive.org\cite{httparchive}, which collect statistical data
+of the top million pages of the web, reports that on average 101 requests are
+required to serve to serve a single page\cite{httparchive-trends}. The amount of
+data per request add up to \emph{22,4kB} excluding the overhead of TCP itself.
+The browser opens 40 TCP Connections on average. The number of requests is
+higher than for the number of connections, which means for some requests
+existing connections could be reused, by using for example HTTP
+Keep-Alive~\cite{I-D.thomson-hybi-http-timeout}.
+
+Having this many requests increases the page load time and lead to a certain
+latency before a web page can be rendered completely. The time to complete a
+transfer using TCP slow start assuming no packets get lost is calculated the
+follow way~\cite{832574}:
+
+\begin{align}
+  t&=\lceil log_{\gamma} (\frac{S(\gamma - 1)}{init\_cwnd} + 1) \rceil * RTT + \frac{S}{C} \nonumber \\
+  S~&\dots~\text{transfer size } \nonumber \\
+  init\_cwnd~&\dots~\text{Initial window size} \nonumber \\
+  RTT~&\dots~\text{Round-Trip-Time} \nonumber \\
+  C~&\dots~\text{Link Rate of the slowest link} \nonumber\\
+\end{align}
+\begin{align}
+  & && \text{delayed ACKs} \nonumber\\
+  \gamma &=
+    \smash{\left\{\begin{array}{lr}
+       1.5 \\[\jot]
+       2 \\
+       \vspace{0.5em}
+   \end{array}\right.} && \nonumber\text{not delayed} \\
+\end{align}
+
+A report by google called \emph{More Bandwidth Doesn’t Matter}\cite{bandwith}
+indicates that browsers cannot make effective use of broadband connections to
+speed up page load time. The study shown that an increase of bandwith from
+5Mbps to 10Mbps only gave 5\% improvement in load time. On the other hand
+changing the Round Trip time had much higher impact: With a high RTT (220ms)
+only 10\% of 5Mbps connection could be used, while an almost zero Round trip
+time (still only) allowed to use 54\% of the bandwith.
