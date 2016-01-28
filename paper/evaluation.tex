@@ -16,16 +16,17 @@ runtime by giving shell access.
 
 \input{topology}
 
-For our network topology we have chosen the following setup: Both client and
-server are represented by host. They are connected via virtual ethnernet pairs
-to a software bridge, which represents our router. The veth pair of the server
-stands for the Uplink the client has over the internet to our server. The other
-one is the local area network, where both client and router are included.
-To limit the bandwith and set a forwarding delay, we applied policies using
-Linux's Traffic Control~\cite{tc}. The Link between client and router was
-constantly limited to 1GB with a forwarding delay of 1ms. The TCP receive/send
-window was globally with to be large enough to fit even the largest requests
-made during this experiment. The relevant sysctl configuration is the following:
+For our network topology we have chosen a setup as depicted in figure~\ref{fig:topology}.
+Both client and server are represented by host. They are connected via virtual
+ethnernet pairs to a software bridge, which represents our router. The veth pair
+of the server stands for the Uplink the client has over the internet to our
+server. The other one is the local area network, where both client and router
+are included. To limit the bandwith and set a forwarding delay, we applied
+policies using Linux's Traffic Control~\cite{tc}. The Link between client and
+router was constantly limited to 1GB with a forwarding delay of 1ms. The TCP
+receive/send window was globally with to be large enough to fit even the largest
+requests made during this experiment. The relevant sysctl configuration is the
+following:
 
 \begin{lstlisting}
 # /etc/sysctl.conf
@@ -38,8 +39,8 @@ net.ipv4.tcp_rmem = 10240 87380 16777216
 
 As scheduling algorithm we used HFSC. As TCP congestion algorithm
 Cubic~\cite{cubic} was in use, which is the default on Linux. As application of
-TCP we decied to use HTTP. Therefor we started nginx in version 1.8.0 on the the server
-and set it up to serve static files:
+TCP we decied to use HTTP. Therefor we started nginx in version 1.8.0 on the the
+server and set it up to serve static files:
 
 \begin{lstlisting}
 # nginx.conf
@@ -53,12 +54,14 @@ http { server {
 } }
 \end{lstlisting}
 
+On the client, we use cURL~\cite{curl} to issue HTTP Requests. To match up
+better with real browsers in term of request size the HTTP header of Google
+Chrome was used.
+
 %# Testsetup
 %
-%- Client: curl, HTTP-Header von Chrome
-%- Server: Nginx 1.8.0
 %- Dateien von 1kb bis 16384kb
-%- tcp cubic
+%- neu starten, nach jeder anfrage
 %
 %## Grenzen der Simulation:
 %- Nur ein Link zum Server simuliert
