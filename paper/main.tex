@@ -1,5 +1,5 @@
 \documentclass[11pt]{IEEEtran}
-\usepackage{epsfig,endnotes,url,color}
+\usepackage{endnotes,url,color}
 \usepackage{array}
 \usepackage[english]{babel}
 \usepackage{xspace}
@@ -21,8 +21,22 @@
 \usepackage{mathpazo} % math & rm
 \linespread{1.03}        % Palatino needs more leading (space between lines)
 
-\input{space-tricks}
+\usepackage{tikz}
+\usetikzlibrary{chains,shapes.multipart}
 
+\tikzset{%
+  xrightarrow/.style={
+    rectangle split,
+    anchor=text split west,
+    rectangle split parts=2,
+    append after command={%
+      (\tikzlastnode.text split west) edge[->] (\tikzlastnode.text split east)
+    }
+  }
+}
+
+
+\input{space-tricks}
 
 \input{mac}
 \input{defs}

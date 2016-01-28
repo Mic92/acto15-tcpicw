@@ -6,5 +6,11 @@ network, we chose the network virtualisiation framework Mininet~\cite{mininet}.
 Mininet exploits existing os virtualisation and ressource management features of
 the linux kernel, namely Network namespaces~\cite{network_namespaces} and
 Cgroups~\cite{cgroups}, to simulate multiple networks and peers on a single
-host. Because no virtual machines are involved and linux can make advantage of
+host. Because no virtual machines are involved and Linux can make advantage of
 zero-copy mechanism, the overhead of these Network namespaces is low.
+Mininet also integrates other features such as traffic control and OpenFlow, so
+one can build arbitrary network topologies and conditions. To create and
+configure networks Mininet exposes a Python API and allow to interact with
+network namespaces at runtime by giving shell access.
+
+\input{topology}

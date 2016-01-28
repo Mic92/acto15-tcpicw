@@ -1,0 +1,39 @@
+\newcommand{\FixedScale}{0.7}
+
+\begin{figure*}
+\begin{tikzpicture}[
+  start chain=going right,
+  diagram item/.style={
+    on chain,
+    join
+  },
+  node distance=1cm and 3cm,
+  scale=0.8, every node/.style={transform shape}
+]
+
+\node [
+  diagram item,
+  label=below:{Server (Nginx)}
+] (server) {\includegraphics[scale=\FixedScale]{figure/server_w_pc_router}};
+
+\node [
+  diagram item,
+  label=center:{Internet}
+] (internet) {\includegraphics[scale=\FixedScale]{figure/cloud}};
+
+\node [
+  diagram item,
+  label=below:Modem/Router
+] (router) {\includegraphics[scale=\FixedScale]{figure/cable_modem}};
+
+\node [
+  diagram item,
+  label=below:{Client (cURL)}
+] (client) {\includegraphics[scale=\FixedScale]{figure/pc}};
+
+\draw (server)   -- (internet);
+\draw (internet) -- (router) node[pos=0.62,text width=3cm] {BW: variable,\\Delay: variable};
+\draw (router)   -- (client) node[pos=0.62,text width=3cm] {BW: 1Gbps,\\Delay: 1ms};
+\end{tikzpicture}
+\caption{Network Topology simulated using Mininet}
+\end{figure*}
