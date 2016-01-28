@@ -38,9 +38,10 @@ net.ipv4.tcp_rmem = 10240 87380 16777216
 \end{lstlisting}
 
 As scheduling algorithm we used HFSC. As TCP congestion algorithm
-Cubic~\cite{cubic} was in use, which is the default on Linux. As application of
-TCP we decied to use HTTP. Therefor we started nginx in version 1.8.0 on the the
-server and set it up to serve static files:
+Cubic~\cite{cubic} was in use, which is the default on Linux. The router was
+configured to have a queue length of 1000 packets. As application of TCP we
+decied to use HTTP. Therefor we started Nginx~\cite{nginx} in version 1.8.0 on
+the the server and set it up to serve static files:
 
 \begin{lstlisting}
 # nginx.conf
@@ -54,14 +55,24 @@ http { server {
 } }
 \end{lstlisting}
 
-On the client, we use cURL~\cite{curl} to issue HTTP Requests. To match up
-better with real browsers in term of request size the HTTP header of Google
-Chrome was used.
+On the client, we use cURL~\cite{curl} to issue HTTP requests. To match up
+better with real browsers in term of request size, the HTTP header, a Google
+Chrome browser would do, was chosen.
+
+The following test parameter were used:
+
+\begin{itemize}
+  \item initial window size (on both links) in segments: 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40, 60
+  \item uplink forwarding delay in ms: 1, 5, 10, 50, 100, 300
+  \item uplink bandwith in mbit/s: 1, 2, 5, 10, 100
+  \item requests size in kb (only payload, not http): 1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
+\end{itemize}
+
+After each run we recreated the network environment. The initial window size was
+applied by setting the \emph{initcwnd} route attribute with iproute2.
+
 
 %# Testsetup
-%
-%- Dateien von 1kb bis 16384kb
-%- neu starten, nach jeder anfrage
 %
 %## Grenzen der Simulation:
 %- Nur ein Link zum Server simuliert
