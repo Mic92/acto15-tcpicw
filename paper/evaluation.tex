@@ -1,3 +1,10 @@
-\section{Evaluation}
-\label{sec:evaluation}
+\section{Measurement Setup}
+\label{sec:measurement_setup}
 
+To research the influence of different initial window size on TCP and the
+network, we chose the network virtualisiation framework Mininet~\cite{mininet}.
+Mininet exploits existing os virtualisation and ressource management features of
+the linux kernel, namely Network namespaces~\cite{network_namespaces} and
+Cgroups~\cite{cgroups}, to simulate multiple networks and peers on a single
+host. Because no virtual machines are involved and linux can make advantage of
+zero-copy mechanism, the overhead of these Network namespaces is low.
