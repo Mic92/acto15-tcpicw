@@ -23,10 +23,11 @@ of the server stands for the Uplink the client has over the internet to our
 server. The other one is the local area network, where both client and router
 are included. To limit the bandwith and set a forwarding delay, we applied
 policies using Linux's Traffic Control~\cite{tc}. The Link between client and
-router was constantly limited to 1GB with a forwarding delay of 1ms. The TCP
-receive/send window was globally with to be large enough to fit even the largest
-requests made during this experiment. The relevant sysctl configuration is the
-following:
+router was constantly limited to 1GB with a forwarding delay of 1ms. The
+assumption made in our topology was, that the bottleneck often is the uplink of
+the client. The TCP receive/send window was globally with to be large enough to
+fit even the largest requests made during this experiment. The relevant sysctl
+configuration is the following.
 
 \begin{lstlisting}
 # /etc/sysctl.conf
@@ -69,8 +70,10 @@ The following test parameter were used:
 \end{itemize}
 
 After each run we recreated the network environment. The initial window size was
-applied by setting the \emph{initcwnd} route attribute with iproute2.
+applied by setting the \emph{initcwnd} route attribute with iproute2. The total
+request time was reported on the receiver site by curl.
 
+\include{graphs}
 
 %# Testsetup
 %
@@ -83,8 +86,3 @@ applied by setting the \emph{initcwnd} route attribute with iproute2.
 %  da Acknowledges verhältnissmäßig zur übertragenen Nachricht klein sind.
 %
 %- bw = (cwnd * mtu) / rtt
-%- rto... retransmission timeout
-%  - time before unacknowledged packet is resent
-%  - zu groß -> Verzögerungen, doppelte acks.
-%  - zu klein -> doppelte Packete verschicken
-%  - z.B. laut RFC rto = srtt + 4 * varrtt
