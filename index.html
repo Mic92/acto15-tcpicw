@@ -1,2 +1,130 @@
 <html>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+  <style>body { padding-top: 70px; }</style>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button
+           type="button"
+           class="navbar-toggle collapsed"
+           data-toggle="collapse"
+           data-target="#bs-example-navbar-collapse-6"
+           aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Measurement Results</a></div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li role="presentation"><a class="active" href="#bandwidth">By Bandwith</a></li>
+          <li role="presentation"><a href="#request_size">By Request Size</a></li>
+          <li role="presentation"><a href="#raw_data">Raw Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Impact of TCP's Initial Congestion Window</h1>
+
+  <h2>Original Task</h2>
+  <p>
+  TCP flows start with an initial congestion window of at most three segments or
+  about 4KB of data. Because most Web transactions are short-lived, the initial
+  congestion window is a critical TCP parameter in determining how quickly flows
+  can finish. To optimize the user experience for Web transactions it has been
+  suggested to increase the initial congestion window.
+
+  The task is to investigate the impact of the congestion window size on the
+  throughput of short lived transactions. Mininet should be used for the
+  experimental setup. The performance for different initial congestion window
+  sizes and transaction times should be measured. The results should
+  then be presented with a graph.
+  </p>
+
+  <h2>Test setup</h2>
+
+  <ul>
+    <li> Client <- 1Gbit/s -> Router <- Uplink -> Server</li>
+    <li> Client: curl, HTTP-Header von Chrome</li>
+    <li> Server: Nginx 1.8.0</li>
+  </ul>
+
+
+  The following test parameter were used:
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>initial window size (on both links)</td>
+        <td>3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40</td>
+      </tr>
+      <tr>
+        <td>uplink forwarding delay in ms</td>
+        <td>1, 5, 10, 50, 100, 300</td>
+      </tr>
+      <tr>
+        <td>client-router forwarding delay in ms</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>uplink bandwith in mbit/s</td>
+        <td>1, 2, 5, 10, 100</td>
+      </tr>
+      <tr>
+        <td>client-router bandwith in mbit/s</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>requests size in kb (only payload, not http)</td>
+        <td>1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="bandwidth">By Bandwidth</h2>
+  <ul>
+    <li><a href="graphs/bandwidth-1mb.png">1MB</a></li>
+    <li><a href="graphs/bandwidth-2mb.png">2MB</a></li>
+    <li><a href="graphs/bandwidth-5mb.png">5MB</a></li>
+    <li><a href="graphs/bandwidth-10mb.png">10MB</a></li>
+    <li><a href="graphs/bandwidth-100mb.png">100MB</a></li>
+  </ul>
+  <h2 id="request_size">By Request Size</h2>
+  <ul>
+    <li><a href="graphs/request_size-1kb.png">1KB</a></li>
+    <li><a href="graphs/request_size-2kb.png">2KB</a></li>
+    <li><a href="graphs/request_size-4kb.png">4KB</a></li>
+    <li><a href="graphs/request_size-8kb.png">8KB</a></li>
+    <li><a href="graphs/request_size-16kb.png">16KB</a></li>
+    <li><a href="graphs/request_size-32kb.png">32KB</a></li>
+    <li><a href="graphs/request_size-64kb.png">64KB</a></li>
+    <li><a href="graphs/request_size-128kb.png">128KB</a></li>
+    <li><a href="graphs/request_size-256kb.png">256KB</a></li>
+    <li><a href="graphs/request_size-512kb.png">512KB</a></li>
+    <li><a href="graphs/request_size-1024kb.png">1024KB</a></li>
+    <li><a href="graphs/request_size-2048kb.png">2048KB</a></li>
+    <li><a href="graphs/request_size-4096kb.png">4096KB</a></li>
+    <li><a href="graphs/request_size-8192kb.png">8192KB</a></li>
+    <li><a href="graphs/request_size-16384kb.png">16384KB</a></li>
+  </ul>
+
+  <h2 id="raw_data">Raw CSV data</h2>
+
+  <ul>
+    <li> <a href="data.csv">data.csv</a></li>
+  </ul>
+</body>
 </html>
