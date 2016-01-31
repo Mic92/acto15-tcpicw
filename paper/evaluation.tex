@@ -16,8 +16,10 @@ runtime by giving shell access.
 
 \input{topology}
 
-For our network topology we have chosen a setup as depicted in figure~\ref{fig:topology}.
-Both client and server are represented by host. They are connected via virtual
+All measurement code and code related to mininet can be found in the following
+repository: \url{https://github.com/Mic92/acto15-tcpicw}. For our network
+topology we have chosen a setup as depicted in figure~\ref{fig:topology}. Both
+client and server are represented by host. They are connected via virtual
 ethnernet pairs to a software bridge, which represents our router. The veth pair
 of the server stands for the Uplink the client has over the internet to our
 server. The other one is the local area network, where both client and router
@@ -69,9 +71,20 @@ The following test parameter were used:
   \item requests size in kb (only payload, not http): 1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
 \end{itemize}
 
-After each run we recreated the network environment. The initial window size was
-applied by setting the \emph{initcwnd} route attribute with iproute2. The total
-request time was reported on the receiver site by curl.
+After each run we the network environment was recreated. The initial window size
+was applied by setting \emph{initcwnd} route attributes with iproute2. The total
+request time was reported on receiver site by curl. We depicted time relative to
+a window of 3 for selected values in this paper for 1MBps, 5MBps and 100MBps in
+figures \ref{fig:bandwith-1mb}, \ref{fig:bandwith-5mb} and
+\ref{fig:bandwith-100mb}. Graphs and raw data of the whole measurement can
+be also lookuped on this page: \url{https://mic92.github.io/acto15-tcpicw/}
+
+As expected changing the initial window size for rather small and big request
+sizes did not result in an improvement of request time. For small sizes
+($\leq{}4\text{kiB}$) the initial window of 3 is already sufficient to transmit
+all values within 1 round trip time. For bigger requests
+($\gtrsim{}2048\text{kiB}$) TCP Slow Start algorithm has enough time to scale
+up to the bandwidth limit.
 
 \include{graphs}
 
