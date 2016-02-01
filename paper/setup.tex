@@ -1,0 +1,76 @@
+\section{Measurement Setup}
+\label{sec:measurement_setup}
+
+To research the influence of different initial window size on TCP and the
+network, we chose the network virtualization framework Mininet~\cite{mininet}.
+Mininet exploits existing os virtualization and resource management features of
+the Linux kernel, namely Network namespaces~\cite{network_namespaces} and
+Cgroups~\cite{cgroups}, to simulate multiple networks and peers on a single
+host. Because no virtual machines are involved and Linux can make advantage of
+zero-copy mechanism, the overhead of these Network namespaces is low. It can
+easily simulate 10GbE-Networks using commodity PC-Hardware. Mininet also
+integrates other features such as traffic control and OpenFlow, so one can build
+arbitrary network topologies and conditions. To create and configure networks
+Mininet exposes a Python API and allow to interact with network namespaces at
+runtime by giving shell access.
+
+\input{topology}
+
+All measurement code and code related to mininet can be found in the following
+repository: \url{https://github.com/Mic92/acto15-tcpicw}. For our network
+topology we have chosen a setup as depicted in figure~\ref{fig:topology}. Both
+client and server are represented by host. They are connected via virtual
+ethnernet pairs to a software bridge, which represents our router. The veth pair
+of the server stands for the Uplink the client has over the internet to our
+server. The other one is the local area network, where both client and router
+are included. To limit the bandwith and set a forwarding delay, we applied
+policies using Linux's Traffic Control~\cite{tc}. The Link between client and
+router was constantly limited to 1GB with a forwarding delay of 1ms. The
+assumption made in our topology was, that the bottleneck often is the uplink of
+the client. The TCP receive/send window was globally with to be large enough to
+fit even the largest requests made during this experiment. The relevant sysctl
+configuration is the following.
+
+\begin{lstlisting}
+# /etc/sysctl.conf
+net.ipv4.tcp_window_scaling = 1
+
+net.core.wmem_max = 16777216
+net.ipv4.tcp_wmem = 10240 87380 16777216
+net.ipv4.tcp_rmem = 10240 87380 16777216
+\end{lstlisting}
+
+As scheduling algorithm we used HFSC. As TCP congestion algorithm
+Cubic~\cite{cubic} was in use, which is the default on Linux. The router was
+configured to have a queue length of 1000 packets. As application of TCP we
+decied to use HTTP. Therefor we started Nginx~\cite{nginx} in version 1.8.0 on
+the the server and set it up to serve static files:
+
+\begin{lstlisting}
+# nginx.conf
+pid nginx.pid;
+user root;
+error_log stderr;
+events { worker_connections  1024; }
+http { server {
+    listen 80;
+    location / { root www; }
+} }
+\end{lstlisting}
+
+On the client, we use cURL~\cite{curl} to issue HTTP requests. To match up
+better with real browsers in term of request size, the HTTP header, a Google
+Chrome browser would do, was chosen.
+
+The following test parameter were used:
+
+\begin{itemize}
+  \item initial window size (on both links) in segments: 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40, 60
+  \item uplink forwarding delay in ms: 1, 5, 10, 50, 100, 300
+  \item uplink bandwith in mbit/s: 1, 2, 5, 10, 100
+  \item requests size in kb (only payload, not http): 1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
+\end{itemize}
+
+After each run we the network environment was recreated. The initial window size
+was applied by setting \emph{initcwnd} route attributes with iproute2. The total
+request time was reported on receiver site by curl.

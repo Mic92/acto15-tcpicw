@@ -83,20 +83,21 @@ transfer using TCP slow start assuming no packets get lost is calculated the
 follow way~\cite{832574}:
 
 \begin{align}
-  t&=\lceil log_{\gamma} (\frac{S(\gamma - 1)}{init\_cwnd} + 1) \rceil * RTT + \frac{S}{C} \label{loadtime}\\
-  S~&\dots~\text{transfer size } \nonumber \\
-  init\_cwnd~&\dots~\text{Initial window size} \nonumber \\
-  RTT~&\dots~\text{Round-Trip-Time} \nonumber \\
-  C~&\dots~\text{Link Rate of the slowest link} \nonumber\\
+  t&=\lceil log_{\gamma} (\frac{S(\gamma - 1)}{init\_cwnd} + 1) \rceil * RTT +
+  \frac{S}{C} \label{loadtime}\\\label{transfer_time}
+  S~&\dots~\text{transfer size } \\\nonumber
+  init\_cwnd~&\dots~\text{Initial window size} \\\nonumber
+  RTT~&\dots~\text{Round-Trip-Time} \\\nonumber
+  C~&\dots~\text{Link Rate of the slowest link} \\\nonumber
 \end{align}
 \begin{align}
-  & && \text{delayed ACKs} \nonumber\\
+  & && \text{delayed ACKs} \nonumber \\
   \gamma &=
     \smash{\left\{\begin{array}{lr}
        1.5 \\[\jot]
-       2 \\
+       2 \\\nonumber
        \vspace{0.5em}
-   \end{array}\right.} && \nonumber\text{not delayed} \\
+   \end{array}\right.} && \text{not delayed} \\\nonumber
 \end{align}
 
 A report by google called \emph{More Bandwidth Doesn't Matter}\cite{bandwith}
