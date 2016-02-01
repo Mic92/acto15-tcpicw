@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 
+import ctypes
+import csv
 import os
+import re
 import subprocess
 from string import Template
-import ctypes
 import time
-import re
-import csv
 
 from mininet.net import Mininet
+from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.log import info, setLogLevel
 from mininet.nodelib import LinuxBridge
-from mininet.cli import CLI
 
 ROOT_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -151,11 +151,11 @@ def tcptrace(host):
 
 
 def simulate(delay=10,
-             bandwith=10,
+             bandwidth=10,
              max_queue_size=1000,
              request_size=8,
              initcwnd=10):
-    net, client, server = create("%dms" % delay, bandwith, max_queue_size)
+    net, client, server = create("%dms" % delay, bandwidth, max_queue_size)
     processes = []
     curl_data = None
     try:
@@ -188,7 +188,7 @@ def simulate(delay=10,
     metadata = tcptrace(client)
     metadata["initcwnd"] = initcwnd
     metadata["delay"] = delay
-    metadata["bandwith"] = bandwith
+    metadata["bandwidth"] = bandwidth
     metadata["max_queue_size"] = max_queue_size
     metadata["request_size"] = request_size
     if curl_data:
@@ -197,13 +197,22 @@ def simulate(delay=10,
     return metadata
 
 
-PARAMETERS = ["initcwnd", "delay", "bandwith", "max_queue_size", "request_size"]
-CURL_DATA = ["time_namelookup",
-             "time_connect",
-             "time_appconnect",
-             "time_pretransfer",
-             "time_starttransfer",
-             "time_total"]
+PARAMETERS = [
+    "initcwnd",
+    "delay",
+    "bandwidth",
+    "max_queue_size",
+    "request_size"
+]
+
+CURL_DATA = [
+    "time_namelookup",
+    "time_connect",
+    "time_appconnect",
+    "time_pretransfer",
+    "time_starttransfer",
+    "time_total"
+]
 
 
 class Data:
@@ -266,9 +275,9 @@ class Data:
                                 fieldnames=self.fieldnames)
         return file, writer
 
-if __name__ == '__main__':
+
+def main():
     setLogLevel('info')
-    measurements = {}
 
     # mininet seriously fuck ups cgroups
     os.system("mount --make-rprivate /")
@@ -276,14 +285,14 @@ if __name__ == '__main__':
     os.environ['LC_ALL'] = 'C'  # consistent number formats
     data = Data("data.csv")
     data.load_or_create()
-    for cwnd in [3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40]:
+    for cwnd in [3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 18, 24, 32, 40, 60]:
         for delay in [1, 5, 10, 50, 100, 300]:
             for bw in [1, 2, 5, 10, 100]:
                 for max_queue_size in [1000]:  # reasonable values?
                     for request_size in range(15):
                         keys = dict(initcwnd=cwnd,
                                     delay=delay,
-                                    bandwith=bw,
+                                    bandwidth=bw,
                                     max_queue_size=max_queue_size,
                                     request_size=2**request_size)
                         if keys in data:
@@ -291,3 +300,6 @@ if __name__ == '__main__':
                         m = simulate(**keys)
                         data.append(m)
     data.close()
+
+if __name__ == '__main__':
+    main()

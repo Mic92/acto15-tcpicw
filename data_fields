@@ -145,6 +145,6 @@ time_starttransfer
 time_total
 initcwnd
 delay
-bandwith
+bandwidth
 max_queue_size
 request_size
