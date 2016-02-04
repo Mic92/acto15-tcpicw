@@ -6,18 +6,21 @@ the beginning of new connection.
 The current standard RFC3390~\cite{rfc3390} from 2002 specifies a window of four
 segments (over 4KB). Large-scale experiments~\cite{36640} by Google from 2010
 have shown that an increase of the initial congestion window improves the
-overall performance, latency in particular, of web servers without a negative
-impact on the network stability. The reasoning made by this research is that
-most web requests only transmit a small amount of data and take a short time.
-Therefor these connections do not live long enough to build up a congestion
-window big enough to make efficient use of the available bandwidth. Driven by
-these results, the experimental standard RFC6928~\cite{rfc6928} was made to
-propose an increase of the TCP's Initial Window by 10 segments.
+overall performance of web servers without a negative impact on the network
+stability. In their research they measured transmission time for web requests to
+their services. These only transmit a small amount of data and take a short
+time. Therefor the tcp connections do not live long enough to build up a
+congestion window big enough to make efficient use of the available bandwidth.
+Driven by these results, the experimental standard RFC6928~\cite{rfc6928} was
+made to propose an increase of the TCP's Initial Window by 10 segments.
 
 In this paper the effect of different TCP's Initial Window on user latency is
 evaluated in a controlled environment simulating various network condition with
 the use of Mininet~\cite{mininet}.
 
-TODO outline of the text
+First we present the TCP congestion control mechanisms and how certain network
+conditions influence throughput and transmission time. Then we show our
+measurement methodology. After that we will evaluate our results and discuss the
+outcomes.
 \vspace{-4mm}
 \end{abstract}

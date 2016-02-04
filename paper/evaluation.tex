@@ -11,15 +11,15 @@ As expected changing the initial window size for rather small and big request
 sizes did not result in an improvement of request time. For small sizes
 ($\leq{}4\text{kiB}$) the initial window of 3 is already sufficient to transmit
 all values within 1 round trip time. For bigger requests
-($\gtrsim{}2048\text{kiB}$) TCP Slow Start algorithm has enough time to scale up
+($\gtrsim{}2048\text{kiB}$) TCP Slow Start algorithm had enough time to scale up
 to the bandwidth limit.
 
-If we look at for web more common request sizes (16kiB-256kiB), we the see
-performance improves between 10\% and 20\% for a initial TCP window of 10
-segments. The saving is higher, if the link latency gets higher or the link
-provides more bandwidth. Therefor connections with a high Bandwidth-Delay-Product
-profit most from a bigger initial congestion window. This behaviour is a
-consequence of equation~\ref{transfer_time}. Improving the window size beyond 10
-segments still improves the user latency so it saves up 30\%-40\% of time for
-window sizes like 32 and 40. However the scaling is not linear, which is also
-consistent with the model~\ref{transfer_time}.
+If we look at transmission sites more common for web request (16kiB-256kiB), we
+the see performance improves between 10\% and 20\% for a initial TCP window of
+10 segments. The saving is higher, if the link latency gets higher or the link
+provides more bandwidth. Therefor connections with a high
+Bandwidth-Delay-Product profit most from a bigger initial congestion window.
+This behaviour is a consequence of equation~\ref{transfer_time}. Improving the
+window size beyond 10 segments still improves the user latency so it saves up
+30\%-40\% of time for window sizes like 32 and 40. However the scaling is not
+linear, which is also consistent with the model~\ref{transfer_time}.

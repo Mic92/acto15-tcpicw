@@ -25,10 +25,10 @@ Retransmit). It then enters a phase called Fast Recovery. In this phase the
 sender will increase the congestion window only one segment per round trip,
 which is equivalent to linear growth.
 
-Other congestion algorithm have slightly different behaviour on how they behave
+Other congestion algorithms have slightly different behaviour on how they behave
 when congestion is detected. In picture~\ref{fig:cwnd_tcp_algos} the grow of TCP
 congestion windows for different TCP congestion algorithm is depicted. An
-Assumption most algorithms make is that the majority packet loss in the network
+assumption most algorithms make is that the majority packet loss in the network
 occurs because overloading the network at bottlenecks rather than faulty
 transmission. Routers in the network have a limited queue they fill up, before
 they begin to drop IP packets. Bottlenecks in the network occur because
@@ -58,7 +58,7 @@ following way~\cite{opac-b1120676}:
 \end{align}
 
 The initial congestion window therefor is a critical factor at the start of a
-new connection. If it is chosen too high their is a risk of overloading the
+new connection. If it is chosen too high there is a risk of overloading the
 network which results in dropped packets followed by retransmission. If it is
 too low a connection will take longer to fully use the available bandwidth on the
 link. This is especially important if only small payloads are transmitted. For
@@ -74,7 +74,7 @@ required to serve to serve a single page\cite{httparchive-trends}. The amount of
 data per request add up to \emph{22,4kB} excluding the overhead of TCP itself.
 The browser opens 40 TCP Connections on average. The number of requests is
 higher than for the number of connections, which means for some requests
-existing connections could be reused, by using for example HTTP
+existing connections can be reused, by using for example HTTP
 Keep-Alive~\cite{I-D.thomson-hybi-http-timeout}.
 
 Having this many requests increases the page load time and lead to a certain
@@ -104,8 +104,8 @@ A report by google called \emph{More Bandwidth Doesn't Matter}\cite{bandwith}
 indicates that browsers cannot make effective use of broadband connections to
 speed up page load time. The study shown that an increase of bandwidth from
 5Mbps to 10Mbps only gave 5\% improvement in load time. On the other hand
-changing the Round Trip time had much higher impact: With a high RTT (220ms)
-only 10\% of 5Mbps connection could be used, while an almost zero Round trip
+changing the round trip time had much higher impact: With a high RTT (220ms)
+only 10\% of 5Mbps connection could be used, while an almost zero round trip
 time (still only) allowed to use 54\% of the bandwidth.
 
 To reduce the time most browsers issue 6 to 13 parallel requests per
@@ -145,8 +145,8 @@ bandwidth in contrast the shorter connection.
 As result of these experiments IETF released in 2010 an Internet
 Draft~\cite{draft-ietf-tcpm-initcwnd-00} to increase the initial window by the
 same amount, which became an experimental standard in 2013
-(rfc6928~\cite{rfc6928}). The Linux operating system also early on adapt to this
-scheme in 2011~\cite{linux}. Almost all Content Delivery Networks these days
-have at least an initial window of 10 as baseline set~\cite{cdnplanet}. Some of
-them go even further and have a higher window such as Cachefly, which sends a
-burst of 70 packets.
+(rfc6928~\cite{rfc6928}). The Linux operating system has also early on adaptoped
+this scheme in 2011~\cite{linux}. Almost all Content Delivery Networks these
+days have at least an initial window of 10 as baseline set~\cite{cdnplanet}.
+Some of them go even further and have a higher window such as Cachefly, which
+sends a burst of 70 packets.
