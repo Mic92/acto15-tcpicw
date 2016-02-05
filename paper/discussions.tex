@@ -6,13 +6,13 @@ congestion window for short bursty connection. However the topology selected for
 testing is rather simple compared to the internet. It does not take congested
 overloaded networks into account. High \emph{initcwnd} might hurt network
 stability in this case, because congestion is perceived later. In our network
-the bandwidth on all link was symmetric. Often client networks are asymmetric
-connected to the internet. In case of downlink oriented traffic clients only
-need a fraction of uplink speed to acknowledge packages. However in some cases
-if upload capacity is shared with other flows, queues are filled up with and
-causes long delays. This phenomenon is called buffer bloat~\cite{rfc970}. Longer
-congestion windows will have a positive effect in case the downlink is not
-congested. In the simulation only cubic was considered as congestion algorithm.
-Cubic is known to be more conservative about increasing the window as we see in
-figure~\ref{fig:cwnd_tcp_algos}, other algorithms such as TCP Reno converge
-faster to higher sizes.
+the bandwidth on all links was symmetric. Often client networks are
+asymmetricrically connected to the internet. Clients only need a fraction of
+uplink speed to acknowledge packages in case of downlink oriented traffic.
+However in some cases if upload capacity is shared with other flows, queues are
+filled up and causes long delays. This phenomenon is called buffer
+bloat~\cite{rfc970}. Longer congestion windows will have a positive effect in
+case the downlink is not congested. In the simulation only cubic was considered
+as congestion algorithm. Cubic is known to be more conservative about increasing
+the window as we see in figure~\ref{fig:cwnd_tcp_algos}, other algorithms such
+as TCP Reno converge faster to higher sizes.

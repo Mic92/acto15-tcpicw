@@ -1,7 +1,7 @@
 \section{Measurement Setup}
 \label{sec:measurement_setup}
 
-To research the influence of different initial window size on TCP and the
+To research the influence of different initial window sizes on TCP and the
 network, we chose the network virtualization framework Mininet~\cite{mininet}.
 Mininet exploits existing os virtualization and resource management features of
 the Linux kernel, namely Network namespaces~\cite{network_namespaces} and
@@ -11,7 +11,7 @@ zero-copy mechanism, the overhead of these Network namespaces is low. It can
 easily simulate 10GbE-Networks using commodity PC-Hardware. Mininet also
 integrates other features such as traffic control and OpenFlow, so one can build
 arbitrary network topologies and conditions. To create and configure networks
-Mininet exposes a Python API and allow to interact with network namespaces at
+Mininet exposes a Python API and allows to interact with network namespaces at
 runtime by giving shell access.
 
 \input{topology}
@@ -27,9 +27,9 @@ router are included. To limit the bandwith and set a forwarding delay, we
 applied policies using Linux's Traffic Control~\cite{tc}. The Link between
 client and router was constantly limited to 1GB with a forwarding delay of 1ms.
 The assumption made in our topology was, that the bottleneck often is the uplink
-of the client. The TCP receive/send window was globally with to be large enough
-to fit even the largest requests made during this experiment. The relevant
-sysctl configuration is the following.
+of the client. The TCP receive/send window was set for all hosts with to be
+large enough to fit even the largest requests made during this experiment. The
+relevant sysctl configuration is the following.
 
 \begin{lstlisting}
 # /etc/sysctl.conf
@@ -43,7 +43,7 @@ net.ipv4.tcp_rmem = 10240 87380 16777216
 As scheduling algorithm we used HFSC. As TCP congestion algorithm
 Cubic~\cite{cubic} was in use, which is the default on Linux. The router was
 configured to have a queue length of 1000 packets. As application of TCP we
-decied to use HTTP. Therefor we started Nginx~\cite{nginx} in version 1.8.0 on
+decied to use HTTP. Therefore we started Nginx~\cite{nginx} in version 1.8.0 on
 the the server and set it up to serve static files:
 
 \begin{lstlisting}
@@ -59,8 +59,8 @@ http { server {
 \end{lstlisting}
 
 On the client, we use cURL~\cite{curl} to issue HTTP requests. To match up
-better with real browsers in term of request size, the HTTP header, a Google
-Chrome browser would do, was chosen.
+better with real browsers in term of request size, we took the HTTP header of a
+Google Chrome browser.
 
 The following test parameter were used:
 
@@ -71,6 +71,6 @@ The following test parameter were used:
   \item requests size in kb (only payload, not http): 1, 2, 4, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384
 \end{itemize}
 
-After each run we the network environment was recreated. The initial window size
+After each run the network environment was recreated. The initial window size
 was applied by setting \emph{initcwnd} route attributes with iproute2. The total
 request time was reported on receiver site by curl.
