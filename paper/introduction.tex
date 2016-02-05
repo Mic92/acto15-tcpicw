@@ -36,11 +36,13 @@ connected links have asymmetric bandwidth or usage.
 
 \begin{figure*}[ht]
 \footnotesize
+\begin{center}
 \includegraphics[scale=1]{figure/b2a_owin.pdf}
 \caption{Congestion window grow over time for different TCP congestion
 algorithm for a single connection over 10mbit link with a forwarding delay of
 10ms when downloading 16MiB file over HTTP}
 \label{fig:cwnd_tcp_algos}
+\end{center}
 \end{figure*}
 
 The task of a TCP congestion algorithms is to manage this network resources by
@@ -89,15 +91,7 @@ follow way~\cite{832574}:
   init\_cwnd~&\dots~\text{Initial window size} \\\nonumber
   RTT~&\dots~\text{Round-Trip-Time} \\\nonumber
   C~&\dots~\text{Link Rate of the slowest link} \\\nonumber
-\end{align}
-\begin{align}
-  & && \text{delayed ACKs} \nonumber \\
-  \gamma &=
-    \smash{\left\{\begin{array}{lr}
-       1.5 \\[\jot]
-       2 \\\nonumber
-       \vspace{0.5em}
-   \end{array}\right.} && \text{not delayed} \\\nonumber
+\gamma &=\left\{\begin{array}{cl} 1.5, & \mbox{delayed ACKs}\\ 2, & \mbox{not delayed} \end{array}\right.
 \end{align}
 
 A report by Google called \emph{More Bandwidth Doesn't Matter}\cite{bandwith}
