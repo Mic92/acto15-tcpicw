@@ -3,7 +3,6 @@
 Jörg Thalheim
 <joerg.thalheim@tu-dresden.de>
 
-
 Note:
 Hi I am Jörg Thalheim and I will present you today,
 which findings I had while evaluating TCP's Initial Congestion
@@ -27,7 +26,6 @@ Note:
 - and what throughput I have measured in this simulation.
 - Finally I will conclude, what I learned
 - and how applicative this findings are for bigger dynamic systems.
-
 
 
 ### Task
@@ -123,7 +121,6 @@ Note:
 - Browsers vendors approach: <a target="_blank" href="https://www.browserscope.org/?category=network">Parallel Requests</a>
 - "Elephant Flow": long and continuous TCP flows
 
-
 Note:
 - to speed up TCP anyway a technique used by browser vendors,
 - is to open multiple TCP connections at once
@@ -199,7 +196,6 @@ Note:
   - In one container I was running curl, which act as my HTTP client
   - In the other namespace the web server Nginx was running, serving static
     files
--
 
 
 ### Measurement Setup
@@ -280,7 +276,6 @@ For 100mb/s:
   <img src="initcwnd-cdns-20140828.png" height="400px"/>
 </a>
 <small>Source: http://www.cdnplanet.com/blog/initcwnd-settings-major-cdn-providers/</small>
-
 
 
 # Question?
