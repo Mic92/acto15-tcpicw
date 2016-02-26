@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+<title>HTTP Archive  - Interesting Stats</title>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(e,n){function t(e){function n(n,t,a){e&&e(n,t,a),a||(a={});for(var u=c(n),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=e("gos");n.exports=t()},{gos:"7eSDFh"}],ee:[function(e,n){n.exports=e("QJf3ax")},{}],3:[function(e,n){function t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var r=e("handle"),o=e(1),i=e(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(e,n){window.NREUM[n]=t("api-"+n)}),n.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],gos:[function(e,n){n.exports=e("7eSDFh")},{}],"7eSDFh":[function(e,n){function t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],D5DuLP:[function(e,n){function t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):void(r.q&&(r.q[e]||(r.q[e]=[]),r.q[e].push(n)))}var r=e("ee").create();n.exports=t,t.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(e,n){n.exports=e("D5DuLP")},{}],XL7HBI:[function(e,n){function t(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:i(e,o,function(){return r++})}var r=1,o="nr@id",i=e("gos");n.exports=t},{gos:"7eSDFh"}],id:[function(e,n){n.exports=e("XL7HBI")},{}],G9z0Bl:[function(e,n){function t(){var e=d.info=NREUM.info,n=f.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&n){c(p,function(n,t){n in e||(e[n]=t)});var t="https"===s.split(":")[0]||e.sslForHttp;d.proto=t?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=e("handle"),c=e(1),u=window,f=u.document;e(2);var s=(""+location).split("?")[0],p={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),u.addEventListener("load",t,!1)):(f.attachEvent("onreadystatechange",r),u.attachEvent("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],loader:[function(e,n){n.exports=e("G9z0Bl")},{}],12:[function(e,n){function t(e,n){var t=[],o="",i=0;for(o in e)r.call(e,o)&&(t[i]=n(o,e[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function t(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=t},{}]},{},["G9z0Bl"]);</script>
+
+<script type="text/javascript">
+// Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-22381566-1']);
+_gaq.push(['_setDomainName', '.httparchive.org']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">
+function loadScript(url, callback) {
+	var sNew = document.createElement("script");
+	sNew.async = true;
+	sNew.src = url;
+	if ( "function" === typeof(callback) ) {
+		sNew.onload = function() {
+			callback();
+			sNew.onload = sNew.onreadystatechange = undefined; // clear it out to avoid getting called twice
+		};
+		sNew.onreadystatechange = function() {
+			if ( "loaded" === sNew.readyState || "complete" === sNew.readyState ) {
+				sNew.onload();
+			}
+		}
+	}
+	var s0 = document.getElementsByTagName('script')[0];
+	s0.parentNode.insertBefore(sNew, s0);
+}
+
+var _jqueryq = [];
+function doJquery() {
+	for ( var i=0; i < _jqueryq.length; i++ ) {
+		var cmd = _jqueryq[i];
+		doCommand(cmd);
+	}
+	_jqueryq = undefined; // as a flat that future commands should be done immediately
+}
+
+function addCommand(cmd) {
+	if ( "undefined" === typeof(_jqueryq) ) {
+		doCommand(cmd);
+	}
+	else {
+		_jqueryq.push(cmd);
+	}
+}
+
+function doCommand(cmd) {
+	if ( "function" === typeof(cmd) ) {
+		cmd();
+	}
+	else if ( "string" === typeof(cmd) ) {
+		// Eval a string of JavaScript in the proper context.
+		if (window.execScript) {
+			window.execScript(cmd);
+		}
+		else {
+			var fn = function() {
+				window.eval.call(window, cmd);
+			};
+			fn();
+		}
+	}
+}
+
+loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js");
+</script>
+
+<!--[if lt IE 9]>
+<script>
+// we use some new HTML tags - make them work in IE<9 - hrrmphf
+var e = ("abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video").split(',');
+for (var i = 0; i < e.length; i++) {
+	document.createElement(e[i]);
+}
+</script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="style.css" />
+<style>
+.chart { 
+	border: 1px solid #BBB; 
+	padding: 4px; 
+	margin-bottom: 40px; }
+</style>
+</head>
+
+<body>
+
+    <header>
+
+		<a href="index.php" id="logo" style="line-height: 0.7em;">HTTP Archive</a>
+		
+		
+<nav>
+<ul>
+  <li> <a id="trendsnav" href="trends.php">Trends</a>
+  <li> <a id="statsnav" href="interesting.php">Stats</a>
+  <li><a id="websitesnav" href="websites.php">Websites</a>
+  <li id="aboutnav" onmouseover="document.getElementById('aboutdropdown').style.display='block';" onmouseout="document.getElementById('aboutdropdown').style.display='none';"><a href="about.php">About</a>
+    <ul id="aboutdropdown">
+ 	  <li><a href="about.php#mission">Mission</a></li>
+	  <li><a href="about.php#faq">FAQ</a></li>
+ 	  <li><a href="downloads.php">Download Data</a></li>
+ 	  <li><a href="urls.php">URLs</a></li>
+ 	  <li><a href="https://github.com/HTTPArchive/httparchive">Source Code</a></li>
+ 	  <li><a href="https://github.com/HTTPArchive/httparchive/issues">Bugs</a></li>
+ 	  <li><a href="http://groups.google.com/group/httparchive/topics">Contact Us</a></li>
+ 	</ul>
+  </li>
+</ul>
+</nav>
+	</header>
+
+<div style="float:right; margin-right: 10em;">
+<a href="about.php#bigquery">Write your own custom queries!</a>
+</div>
+
+<h1>Interesting stats</h1>
+
+<p>
+Got a stat you'd like to see?
+<a href="https://github.com/HTTPArchive/httparchive/issues" target="_blank">Suggest it!</a>
+<span style="margin-left: 20px;">New feature: <a href="compare.php">Compare two runs</a></span>
+</p>
+
+<div style="float: left; margin-right: 20px;">
+<form>
+	<label>Choose a run:</label>
+	<select id='sellabel' name='sellabel' onchange='document.location="?a=All&l="+escape(this.options[this.selectedIndex].value)'>
+  <option value='Feb 1 2016'> Feb 1 2016
+  <option value='Jan 15 2016' selected> Jan 15 2016
+  <option value='Jan 1 2016'> Jan 1 2016
+  <option value='Dec 15 2015'> Dec 15 2015
+  <option value='Dec 1 2015'> Dec 1 2015
+  <option value='Nov 15 2015'> Nov 15 2015
+  <option value='Nov 1 2015'> Nov 1 2015
+  <option value='Oct 15 2015'> Oct 15 2015
+  <option value='Oct 1 2015'> Oct 1 2015
+  <option value='Sep 15 2015'> Sep 15 2015
+  <option value='Sep 1 2015'> Sep 1 2015
+  <option value='Aug 15 2015'> Aug 15 2015
+  <option value='Aug 1 2015'> Aug 1 2015
+  <option value='Jul 15 2015'> Jul 15 2015
+  <option value='Jul 1 2015'> Jul 1 2015
+  <option value='Jun 15 2015'> Jun 15 2015
+  <option value='Jun 1 2015'> Jun 1 2015
+  <option value='May 15 2015'> May 15 2015
+  <option value='May 1 2015'> May 1 2015
+  <option value='Apr 15 2015'> Apr 15 2015
+  <option value='Apr 1 2015'> Apr 1 2015
+  <option value='Mar 15 2015'> Mar 15 2015
+  <option value='Mar 1 2015'> Mar 1 2015
+  <option value='Feb 15 2015'> Feb 15 2015
+  <option value='Feb 1 2015'> Feb 1 2015
+  <option value='Jan 15 2015'> Jan 15 2015
+  <option value='Jan 1 2015'> Jan 1 2015
+  <option value='Dec 15 2014'> Dec 15 2014
+  <option value='Dec 1 2014'> Dec 1 2014
+  <option value='Nov 15 2014'> Nov 15 2014
+  <option value='Nov 1 2014'> Nov 1 2014
+  <option value='Oct 15 2014'> Oct 15 2014
+  <option value='Oct 1 2014'> Oct 1 2014
+  <option value='Sep 15 2014'> Sep 15 2014
+  <option value='Sep 1 2014'> Sep 1 2014
+  <option value='Aug 15 2014'> Aug 15 2014
+  <option value='Aug 1 2014'> Aug 1 2014
+  <option value='Jul 15 2014'> Jul 15 2014
+  <option value='Jul 1 2014'> Jul 1 2014
+  <option value='Jun 15 2014'> Jun 15 2014
+  <option value='Jun 1 2014'> Jun 1 2014
+  <option value='May 15 2014'> May 15 2014
+  <option value='May 1 2014'> May 1 2014
+  <option value='Apr 15 2014'> Apr 15 2014
+  <option value='Apr 1 2014'> Apr 1 2014
+  <option value='Mar 15 2014'> Mar 15 2014
+  <option value='Mar 1 2014'> Mar 1 2014
+  <option value='Feb 15 2014'> Feb 15 2014
+  <option value='Feb 1 2014'> Feb 1 2014
+  <option value='Jan 15 2014'> Jan 15 2014
+  <option value='Jan 1 2014'> Jan 1 2014
+  <option value='Dec 15 2013'> Dec 15 2013
+  <option value='Nov 15 2013'> Nov 15 2013
+  <option value='Nov 1 2013'> Nov 1 2013
+  <option value='Oct 15 2013'> Oct 15 2013
+  <option value='Oct 1 2013'> Oct 1 2013
+  <option value='Sep 15 2013'> Sep 15 2013
+  <option value='Sep 1 2013'> Sep 1 2013
+  <option value='Aug 15 2013'> Aug 15 2013
+  <option value='Aug 1 2013'> Aug 1 2013
+  <option value='Jul 15 2013'> Jul 15 2013
+  <option value='Jul 1 2013'> Jul 1 2013
+  <option value='Jun 15 2013'> Jun 15 2013
+  <option value='Jun 1 2013'> Jun 1 2013
+  <option value='May 15 2013'> May 15 2013
+  <option value='May 1 2013'> May 1 2013
+  <option value='Apr 15 2013'> Apr 15 2013
+  <option value='Apr 1 2013'> Apr 1 2013
+  <option value='Mar 15 2013'> Mar 15 2013
+  <option value='Mar 1 2013'> Mar 1 2013
+  <option value='Feb 15 2013'> Feb 15 2013
+  <option value='Feb 1 2013'> Feb 1 2013
+  <option value='Jan 15 2013'> Jan 15 2013
+  <option value='Jan 1 2013'> Jan 1 2013
+  <option value='Dec 15 2012'> Dec 15 2012
+  <option value='Dec 1 2012'> Dec 1 2012
+  <option value='Nov 15 2012'> Nov 15 2012
+  <option value='Nov 1 2012'> Nov 1 2012
+  <option value='Oct 15 2012'> Oct 15 2012
+  <option value='Oct 1 2012'> Oct 1 2012
+  <option value='Sep 15 2012'> Sep 15 2012
+  <option value='Sep 1 2012'> Sep 1 2012
+  <option value='Aug 15 2012'> Aug 15 2012
+  <option value='Aug 1 2012'> Aug 1 2012
+  <option value='Jul 15 2012'> Jul 15 2012
+  <option value='Jul 1 2012'> Jul 1 2012
+  <option value='Jun 15 2012'> Jun 15 2012
+  <option value='Jun 1 2012'> Jun 1 2012
+  <option value='May 15 2012'> May 15 2012
+  <option value='May 1 2012'> May 1 2012
+  <option value='Apr 15 2012'> Apr 15 2012
+  <option value='Apr 1 2012'> Apr 1 2012
+  <option value='Mar 15 2012'> Mar 15 2012
+  <option value='Mar 1 2012'> Mar 1 2012
+  <option value='Feb 15 2012'> Feb 15 2012
+  <option value='Feb 1 2012'> Feb 1 2012
+  <option value='Jan 15 2012'> Jan 15 2012
+  <option value='Jan 1 2012'> Jan 1 2012
+  <option value='Dec 15 2011'> Dec 15 2011
+  <option value='Dec 1 2011'> Dec 1 2011
+  <option value='Nov 15 2011'> Nov 15 2011
+  <option value='Nov 1 2011'> Nov 1 2011
+  <option value='Oct 15 2011'> Oct 15 2011
+  <option value='Oct 1 2011'> Oct 1 2011
+  <option value='Sep 15 2011'> Sep 15 2011
+  <option value='Sep 1 2011'> Sep 1 2011
+  <option value='Aug 15 2011'> Aug 15 2011
+  <option value='Aug 1 2011'> Aug 1 2011
+  <option value='Jul 15 2011'> Jul 15 2011
+  <option value='Jul 1 2011'> Jul 1 2011
+  <option value='Jun 15 2011'> Jun 15 2011
+  <option value='Jun 1 2011'> Jun 1 2011
+  <option value='May 16 2011'> May 16 2011
+  <option value='Apr 30 2011'> Apr 30 2011
+  <option value='Apr 15 2011'> Apr 15 2011
+  <option value='Mar 29 2011'> Mar 29 2011
+  <option value='Mar 15 2011'> Mar 15 2011
+  <option value='Feb 26 2011'> Feb 26 2011
+  <option value='Feb 11 2011'> Feb 11 2011
+  <option value='Jan 31 2011'> Jan 31 2011
+  <option value='Jan 20 2011'> Jan 20 2011
+  <option value='Dec 28 2010'> Dec 28 2010
+  <option value='Dec 16 2010'> Dec 16 2010
+  <option value='Nov 29 2010'> Nov 29 2010
+  <option value='Nov 15 2010'> Nov 15 2010
+</select>
+</form>
+</div>
+
+<form>
+	<label>Choose URLs:</label>
+<select id='' name='' onchange='document.location="?a=All&l=Jan 15 2016&s="+escape(this.options[this.selectedIndex].value)'>
+<option value='All'> All
+<option value='Top100' selected> Top 100
+<option value='Top1000'> Top 1000
+</select>
+</form>
+
+<div id=interesting style="margin-top: 40px;">
+<a href='#bytesperpage'><img width=400 height=225 id=bytesperpage class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=007099&chd=t:868,57,53,281,45,100&chds=0,868&chdlp=b&chdl=total 1405 kB&chl=Images+-+868+kB%7CHTML+-+57+kB%7CStylesheets+-+53+kB%7CScripts+-+281+kB%7CFonts+-+45+kB%7CVideo+-+100+kB&chma=|5&chtt=Average+Bytes+per+Page+by+Content+Type' style='vertical-align: top;'></a><a href='about.php#bytesperpage' class=info title='info'>i</a>
+<a href='#responsesizes'><img width=640 height=310 id=responsesizes class=chart src='http://chart.googleapis.com/chart?chxl=1:|Video%7CCSS%7CJS%7CHTML%7CSVG%7CPNG%7CJPG%7CGIF&chdlp=b&chdl=average response size (kB)&chxtc=0,6&chxs=0,676767,11.5,0,l|1,676767,11.5,1,lt,67676700&chxr=1,0,160|0,0,153&chxt=x,y&chbh=22&chs=640x310&cht=bhg&chco=3B356A&chds=0,153&chd=t:2,18,19,1,6,17,15,143&chm=N**+kB,676767,0,,12,,:4:&chma=|0,5&chtt=Average+Individual+Response+Size' style='vertical-align: top;'></a>
+<a href='#bytesHtmlDoc'><img width=600 height=225 id=bytesHtmlDoc class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|1-5K%7C6-10K%7C11-15K%7C16-20K%7C21-25K%7C26-30K%7C31-35K%7C36-40K%7C41-45K%7C46-50K%7C51-55K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,014F78,11.5,0,lt,014F78|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=37,30,12&chs=600x225&cht=bvg&chco=014F78&chd=t:12,11,3,9,11,7,6,2,4,2,1&chtt=HTML+Document+Transfer+Size' style='vertical-align: top;'></a><a href='about.php#bytesHtmlDoc' class=info title='info'>i</a>
+<a href='#numDomElements'><img width=600 height=225 id=numDomElements class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|1-400%7C401-800%7C801-1200%7C1201-1600%7C1601-2000%7C2001-2400%7C2401-2800%7C2801-3200%7C3201-3600&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,CC0000,11.5,0,lt,CC0000|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=45,30,15&chs=600x225&cht=bvg&chco=CC0000&chd=t:41,12,12,5,6,5,8,3,1&chtt=%23+of+DOM+Elements+per+Page' style='vertical-align: top;'></a><a href='about.php#numDomElements' class=info title='info'>i</a>
+<a href='#googlelibs'><img width=400 height=225 id=googlelibs class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=184852&chd=t:90,10&chl=no+90%25%7Cyes+10%25&chma=|5&chtt=Pages+Using+Google+Libraries+API' style='vertical-align: top;'></a><a href='about.php#googlelibs' class=info title='info'>i</a>
+<a href='#flash'><img width=400 height=225 id=flash class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=6A5C49&chd=t:84,16&chl=No+Flash+84%25%7CFlash+16%25&chma=|5&chtt=Pages+Using+Flash' style='vertical-align: top;'></a><a href='about.php#flash' class=info title='info'>i</a>
+<a href='#fonts'><img width=400 height=225 id=fonts class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=CC0000&chd=t:70,30&chl=No+Fonts+70%25%7CFonts+30%25&chma=|5&chtt=Pages+Using+Custom+Fonts' style='vertical-align: top;'></a><a href='about.php#fonts' class=info title='info'>i</a>
+<a href='#imageformats'><img width=400 height=225 id=imageformats class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=6A5C49&chd=t:21,53,23,0,1,2&chl=GIF+21%25%7CJPG+53%25%7CPNG+23%25%7CWebP+0%25%7CSVG+1%25%7COther+2%25&chma=|5&chtt=Image+Requests+by+Format' style='vertical-align: top;'></a><a href='about.php#imageformats' class=info title='info'>i</a>
+<a href='#caching'><img width=500 height=225 id=caching class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|t+%3D+0%7C0+%3C+t+%3C%3D+1%7C1+%3C+t+%3C%3D+30%7C30+%3C+t+%3C%3D+365%7Ct+%3E+365&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,224499,11.5,0,lt,224499|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=66,30,22&chs=500x225&cht=bvg&chco=224499&chd=t:33,12,10,25,20&chtt=Cache+Lifetime+%28days%29' style='vertical-align: top;'></a><a href='about.php#caching' class=info title='info'>i</a>
+<a href='#redirects'><img width=600 height=225 id=redirects class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1%7C2%7C3%7C4%7C5%7C6%7C7%7C8%7C9%7C10%7C11%7C15&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,982807,11.5,0,lt,982807|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=31,30,10&chs=600x225&cht=bvg&chco=982807&chd=t:8,35,15,5,4,6,2,5,4,3,2,2,1&chtt=Redirects+per+Page' style='vertical-align: top;'></a><a href='about.php#redirects' class=info title='info'>i</a>
+<a href='#connections'><img width=550 height=225 id=connections class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|1-10%7C11-20%7C21-30%7C31-40%7C41-50%7C51-60%7C61-70%7C71-80&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,CC0000,11.5,0,lt,CC0000|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=46,30,15&chs=550x225&cht=bvg&chco=CC0000&chd=t:31,12,16,7,12,9,3,1&chtt=Connections+per+Page' style='vertical-align: top;'></a><a href='about.php#connections' class=info title='info'>i</a>
+<a href='#avgdomdepth'><img width=600 height=225 id=avgdomdepth class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|2%7C5%7C6%7C7%7C8%7C9%7C10%7C11%7C12%7C13%7C14%7C16%7C17%7C26&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,007099,11.5,0,lt,007099|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=29,30,10&chs=600x225&cht=bvg&chco=007099&chd=t:1,5,6,8,9,10,21,13,6,7,8,2,2,2&chtt=Avg+DOM+Depth' style='vertical-align: top;'></a><a href='about.php#avgdomdepth' class=info title='info'>i</a>
+<a href='#docheight'><img width=600 height=225 id=docheight class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0-1K%7C1-2K%7C2-3K%7C3-4K%7C4-5K%7C5-6K%7C6-7K%7C7-8K%7C8-9K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,E63C0B,11.5,0,lt,E63C0B|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=45,30,15&chs=600x225&cht=bvg&chco=E63C0B&chd=t:40,13,10,6,8,8,3,4,1&chtt=Document+Height+%28pixels%29' style='vertical-align: top;'></a><a href='about.php#docheight' class=info title='info'>i</a>
+<a href='#localstorage'><img width=550 height=225 id=localstorage class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-50%7C51-100%7C101-150%7C151-200%7C201-250%7C251-300%7C1401-1450&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,008000,11.5,0,lt,008000|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=46,30,15&chs=550x225&cht=bvg&chco=008000&chd=t:66,14,3,2,4,2,3,1&chtt=Size+of+localStorage+%28chars%29' style='vertical-align: top;'></a><a href='about.php#localstorage' class=info title='info'>i</a>
+<a href='#sessionstorage'><img width=500 height=225 id=sessionstorage class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-50%7C51-100%7C101-150&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,7777CC,11.5,0,lt,7777CC|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=83,30,28&chs=500x225&cht=bvg&chco=7777CC&chd=t:63,10,3,1&chtt=Size+of+sessionStorage+%28chars%29' style='vertical-align: top;'></a><a href='about.php#sessionstorage' class=info title='info'>i</a>
+<a href='#numiframes'><img width=550 height=225 id=numiframes class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1%7C2%7C3%7C4%7C5%7C6&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,008000,11.5,0,lt,008000|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=008000&chd=t:38,17,17,7,4,3,1&chtt=Iframes+per+Page' style='vertical-align: top;'></a><a href='about.php#numiframes' class=info title='info'>i</a>
+<a href='#numscripts'><img width=600 height=225 id=numscripts class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-10%7C11-20%7C21-30%7C31-40%7C41-50%7C51-60%7C61-70%7C71-80%7C81-90%7C91-100%7C111-120&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,222222,11.5,0,lt,222222|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=34,30,11&chs=600x225&cht=bvg&chco=222222&chd=t:2,9,37,16,12,4,6,2,3,4,2,1&chtt=Script+Tags+per+Page' style='vertical-align: top;'></a><a href='about.php#numscripts' class=info title='info'>i</a>
+<a href='#protocol'><img width=400 height=225 id=protocol class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=000000&chd=t:76,24&chl=HTTP+76%25%7CHTTPS+24%25&chma=|5&chtt=HTTPS+Requests' style='vertical-align: top;'></a><a href='about.php#protocol' class=info title='info'>i</a>
+<a href='#errors'><img width=400 height=225 id=errors class=chart src='http://chart.googleapis.com/chart?chs=400x225&cht=p&chco=007099&chd=t:92,8&chl=No+Errors+92%25%7CErrors+8%25&chma=|5&chtt=Pages+with+Errors+%284xx%2C+5xx%29' style='vertical-align: top;'></a><a href='about.php#errors' class=info title='info'>i</a>
+<a href='#renderStart'><img width=500 height=225 id=renderStart class=chart src='http://chart.googleapis.com/chart?chxl=1:|HTML+Reqs%7CAsync+JS%7C%23+Domains%7CMain+JS%7CCompressed&chxr=0,0,1&chxs=1,676767,11.5,0,lt,67676700&chxtc=1,5&chxt=y,x&chbh=60,30,30&chs=500x225&cht=bvg&chco=224499&chds=0,1&chd=t:0.66,0.45,0.41,0.33,0.32&chm=N,676767,0,,12,,::4&chtt=Highest+Correlation+to+Render+Time' style='vertical-align: top;'></a><a href='about.php#renderStart' class=info title='info'>i</a>
+<a href='#SpeedIndex'><img width=500 height=225 id=SpeedIndex class=chart src='http://chart.googleapis.com/chart?chxl=1:|HTML+Reqs%7CCSS+%26+Main+JS%7CMain+JS%7C%23+Domains%7CCSS+%26+JS&chxr=0,0,1&chxs=1,676767,11.5,0,lt,67676700&chxtc=1,5&chxt=y,x&chbh=60,30,30&chs=500x225&cht=bvg&chco=3B356A&chds=0,1&chd=t:0.64,0.58,0.58,0.54,0.51&chm=N,676767,0,,12,,::4&chtt=Highest+Correlation+to+SpeedIndex' style='vertical-align: top;'></a><a href='about.php#SpeedIndex' class=info title='info'>i</a>
+<a href='#onLoad'><img width=500 height=225 id=onLoad class=chart src='http://chart.googleapis.com/chart?chxl=1:|CSS+%26+JS%7CCompressed%7CJS+Reqs%7CCSS+%26+Main+JS%7CMain+JS&chxr=0,0,1&chxs=1,676767,11.5,0,lt,67676700&chxtc=1,5&chxt=y,x&chbh=60,30,30&chs=500x225&cht=bvg&chco=CC0000&chds=0,1&chd=t:0.71,0.7,0.69,0.68,0.68&chm=N,676767,0,,12,,::4&chtt=Highest+Correlation+to+Load+Time' style='vertical-align: top;'></a><a href='about.php#onLoad' class=info title='info'>i</a>
+<a href='#reqTotal'><img width=600 height=225 id=reqTotal class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|1-25%7C26-50%7C51-75%7C76-100%7C101-125%7C126-150%7C151-175%7C176-200%7C201-225%7C226-250&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,AA0033,11.5,0,lt,AA0033|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=41,30,14&chs=600x225&cht=bvg&chco=AA0033&chd=t:35,12,11,10,7,7,2,4,2,1&chtt=Total+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqTotal' class=info title='info'>i</a>
+<a href='#bytesTotal'><img width=550 height=225 id=bytesTotal class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0-1M%7C1-2M%7C2-3M%7C3-4M%7C4-5M%7C5-6M%7C6-7M&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,184852,11.5,0,lt,184852|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=184852&chd=t:59,21,8,3,3,2,1&chtt=Total+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesTotal' class=info title='info'>i</a>
+<a href='#reqHtml'><img width=550 height=225 id=reqHtml class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-5%7C6-10%7C11-15%7C16-20%7C26-30%7C31-35&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,4B557A,11.5,0,lt,4B557A|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=4B557A&chd=t:1,55,24,10,2,2,1&chtt=HTML+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqHtml' class=info title='info'>i</a>
+<a href='#bytesHtml'><img width=600 height=225 id=bytesHtml class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-20K%7C21-40K%7C41-60K%7C61-80K%7C81-100K%7C101-120K%7C121-140K%7C161-180K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,014F78,11.5,0,lt,014F78|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=45,30,15&chs=600x225&cht=bvg&chco=014F78&chd=t:1,23,20,19,16,6,6,2,1&chtt=HTML+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesHtml' class=info title='info'>i</a>
+<a href='#reqJS'><img width=600 height=225 id=reqJS class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-5%7C6-10%7C11-15%7C16-20%7C21-25%7C26-30%7C31-35%7C36-40%7C41-45%7C46-50&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,4B557A,11.5,0,lt,4B557A|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=37,30,12&chs=600x225&cht=bvg&chco=4B557A&chd=t:5,27,15,17,10,3,6,5,5,2,1&chtt=JS+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqJS' class=info title='info'>i</a>
+<a href='#bytesJS'><img width=600 height=225 id=bytesJS class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-100K%7C101-200K%7C201-300K%7C301-400K%7C401-500K%7C501-600K%7C601-700K%7C701-800K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,014F78,11.5,0,lt,014F78|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=45,30,15&chs=600x225&cht=bvg&chco=014F78&chd=t:5,12,16,36,9,9,3,4,2&chtt=JS+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesJS' class=info title='info'>i</a>
+<a href='#reqCSS'><img width=550 height=225 id=reqCSS class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-2%7C3-4%7C5-6%7C7-8%7C9-10%7C15-16%7C17-18&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,224499,11.5,0,lt,224499|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=46,30,15&chs=550x225&cht=bvg&chco=224499&chd=t:25,33,13,14,3,4,3,5&chtt=CSS+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqCSS' class=info title='info'>i</a>
+<a href='#bytesCSS'><img width=550 height=225 id=bytesCSS class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-10K%7C11-20K%7C21-30K%7C31-40K%7C41-50K%7C51-60K%7C61-70K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,840084,11.5,0,lt,840084|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=46,30,15&chs=550x225&cht=bvg&chco=840084&chd=t:25,13,10,8,12,4,5,2&chtt=CSS+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesCSS' class=info title='info'>i</a>
+<a href='#reqImg'><img width=500 height=225 id=reqImg class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|1-20%7C21-40%7C41-60%7C61-80%7C81-100%7C101-120&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,4B557A,11.5,0,lt,4B557A|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=55,30,18&chs=500x225&cht=bvg&chco=4B557A&chd=t:42,18,10,6,6,1&chtt=Img+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqImg' class=info title='info'>i</a>
+<a href='#bytesImg'><img width=550 height=225 id=bytesImg class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-400K%7C401-800K%7C801-1200K%7C1201-1600K%7C1601-2000K%7C2001-2400K%7C2401-2800K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,014F78,11.5,0,lt,014F78|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=46,30,15&chs=550x225&cht=bvg&chco=014F78&chd=t:1,54,15,7,3,7,3,1&chtt=Img+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesImg' class=info title='info'>i</a>
+<a href='#reqGif'><img width=550 height=225 id=reqGif class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-5%7C6-10%7C11-15%7C16-20%7C21-25%7C26-30&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,E63C0B,11.5,0,lt,E63C0B|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=E63C0B&chd=t:21,35,12,9,4,4,1&chtt=GIF+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqGif' class=info title='info'>i</a>
+<a href='#bytesGif'><img width=500 height=225 id=bytesGif class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-10K%7C11-20K%7C21-30K%7C31-40K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,6A5C49,11.5,0,lt,6A5C49|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=66,30,22&chs=500x225&cht=bvg&chco=6A5C49&chd=t:21,47,5,10,1&chtt=GIF+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesGif' class=info title='info'>i</a>
+<a href='#reqJpg'><img width=500 height=225 id=reqJpg class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-10%7C11-20%7C21-30%7C31-40%7C41-50&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,1515FF,11.5,0,lt,1515FF|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=55,30,18&chs=500x225&cht=bvg&chco=1515FF&chd=t:34,21,9,8,3,1&chtt=JPG+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqJpg' class=info title='info'>i</a>
+<a href='#bytesJpg'><img width=550 height=225 id=bytesJpg class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-200K%7C201-400K%7C401-600K%7C601-800K%7C801-1000K%7C1001-1200K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,982807,11.5,0,lt,982807|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=982807&chd=t:34,21,9,6,5,7,2&chtt=JPG+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesJpg' class=info title='info'>i</a>
+<a href='#reqPng'><img width=600 height=225 id=reqPng class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-5%7C6-10%7C11-15%7C16-20%7C21-25%7C26-30%7C31-35%7C36-40%7C51-55&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,400040,11.5,0,lt,400040|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=41,30,14&chs=600x225&cht=bvg&chco=400040&chd=t:4,28,32,4,8,7,5,2,5,1&chtt=PNG+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqPng' class=info title='info'>i</a>
+<a href='#bytesPng'><img width=550 height=225 id=bytesPng class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-50K%7C51-100K%7C101-150K%7C151-200K%7C201-250K%7C251-300K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,AA0033,11.5,0,lt,AA0033|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=53,30,18&chs=550x225&cht=bvg&chco=AA0033&chd=t:4,48,11,5,7,5,2&chtt=PNG+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesPng' class=info title='info'>i</a>
+<!-- reqWebp data not available for this crawl -->
+<!-- bytesWebp data not available for this crawl -->
+<a href='#reqFont'><img width=500 height=225 id=reqFont class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-2%7C3-4%7C5-6%7C7-8&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,E63C0B,11.5,0,lt,E63C0B|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=66,30,22&chs=500x225&cht=bvg&chco=E63C0B&chd=t:70,16,5,4,1&chtt=Font+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqFont' class=info title='info'>i</a>
+<a href='#bytesFont'><img width=500 height=225 id=bytesFont class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-40K%7C41-80K%7C81-120K%7C121-160K%7C201-240K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,6A5C49,11.5,0,lt,6A5C49|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=55,30,18&chs=500x225&cht=bvg&chco=6A5C49&chd=t:70,8,9,4,3,1&chtt=Font+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesFont' class=info title='info'>i</a>
+<a href='#reqVideo'><img width=500 height=225 id=reqVideo class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-2%7C3-4%7C5-6%7C13-14&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,B09542,11.5,0,lt,B09542|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=66,30,22&chs=500x225&cht=bvg&chco=B09542&chd=t:81,9,5,2,1&chtt=Video+Requests+per+Page' style='vertical-align: top;'></a><a href='about.php#reqVideo' class=info title='info'>i</a>
+<a href='#bytesVideo'><img width=500 height=225 id=bytesVideo class=chart src='http://chart.googleapis.com/chart?chxl=0:|20%25|40%25|60%25|80%25|100%25|1:|0%7C1-50K%7C151-200K%7C201-250K&chm=N**%,676767,0,,12,,::4&chxp=0,20,40,60,80,100&chxs=0,00009D,11.5,0,lt,00009D|1,676767,11.5,0,lt,67676700&chxtc=0,4|1,4&chxt=y,x&chbh=83,30,28&chs=500x225&cht=bvg&chco=00009D&chd=t:81,7,2,1&chtt=Video+Transfer+Size+per+Page' style='vertical-align: top;'></a><a href='about.php#bytesVideo' class=info title='info'>i</a>
+</div>
+
+
+<footer style="text-align: center; margin-left: 8em; margin-right: 8em;">
+<a href="about.php#sponsors">sponsors</a>: 
+<a title="Google" href="http://www.google.com/">Google</a>,
+<a title="Mozilla" href="http://www.mozilla.org/firefox">Mozilla</a>,
+<a title="New Relic" href="http://www.newrelic.com/">New Relic</a>,
+<a title="O'Reilly Media" href="http://oreilly.com/">O&#8217;Reilly Media</a>,
+<a href="http://www.etsy.com/">Etsy</a>,
+<a title="Radware" href="http://www.radware.com/">Radware</a>,
+<a title="dynaTrace Software" href="http://www.dynatrace.com/">dynaTrace Software</a>,
+<a title="Torbit" href="http://torbit.com/">Torbit</a>,
+<a title="Instart Logic" href="http://instartlogic.com/">Instart Logic</a>,
+<a title="Catchpoint Systems" href="http://www.catchpoint.com/">Catchpoint Systems</a>,
+<a title="Fastly" href="http://bit.ly/1nWd1oL">Fastly</a>,
+and
+<a title="SOASTA mPulse" href="https://www.soasta.com/mpulse/sign-up/">SOASTA mPulse</a>.
+<br>
+powered by <a href="http://www.webpagetest.org">WebPagetest</a>
+</footer>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5b0327a758","applicationID":"865906","transactionName":"NFBXZUNRW0ADAkRbCQ0aYENYH1xdFgRCVxUXXFtWH0BdQw==","queueTime":0,"applicationTime":10,"atts":"GBdUEwtLSE4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-768.min.js"}</script></body>
+
+</html>
+
